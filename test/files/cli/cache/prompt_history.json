@@ -1,0 +1,1 @@
+{"commands":["s3 ls","ecr describe-repositories","ecr describe-images --repository-name dummy","ssm describe-parameters","ssm get-parameter --name dummy"],"version":1}

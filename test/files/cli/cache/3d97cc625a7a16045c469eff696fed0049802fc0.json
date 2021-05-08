@@ -1,0 +1,23 @@
+{
+  "Credentials": {
+    "AccessKeyId": "AKID3333000033330000",
+    "SecretAccessKey": "SECRET3333000033330000333300003333000033",
+    "SessionToken": "SESSIONTOKEN333300003333000033330000333300003333000033330000etc",
+    "Expiration": "2021-04-26T10:05:15+00:00"
+  },
+  "AssumedRoleUser": {
+    "AssumedRoleId": "ARLID3333000033330000:another_session_name",
+    "Arn": "arn:aws:sts::333300003333:assumed-role/SomeOtherRole/another_session_name"
+  },
+  "ResponseMetadata": {
+    "RequestId": "0547f0ac-ef84-4f1c-bcc8-4d27f17ba619",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "x-amzn-requestid": "0547f0ac-ef84-4f1c-bcc8-4d27f17ba619",
+      "content-type": "text/xml",
+      "content-length": "1478",
+      "date": "Mon, 26 Apr 2021 09:05:14 GMT"
+    },
+    "RetryAttempts": 0
+  }
+}

@@ -1,0 +1,19 @@
+[default]
+region = eu-west-1
+
+[profile alice]
+region = eu-central-1
+
+[profile bob]
+source_profile = alice
+role_arn = arn:aws:iam::222200002222:role/SomeRole
+role_session_name = session_name
+duration_seconds = 43200
+region = eu-central-1
+
+[profile carol]
+source_profile = alice
+role_arn = arn:aws:iam::333300003333:role/SomeOtherRole
+role_session_name = another_session_name
+mfa_serial = arn:aws:iam::111100001111:mfa/alice
+region = eu-central-1
