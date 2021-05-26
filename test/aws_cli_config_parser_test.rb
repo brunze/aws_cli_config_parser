@@ -29,7 +29,7 @@ describe AwsCliConfigParser do
     assert_equal bob.get('role_arn'), 'arn:aws:iam::222200002222:role/SomeRole'
     assert_equal bob.get('role_session_name'), 'session_name'
     assert_equal bob.get('duration_seconds'), '43200'
-    assert_equal bob.get('aws_access_key_id'), 'AKID2222000022220000'
+    assert_equal bob.get('aws_access_key_id'), 'ASIA2222000022220000'
     assert_equal bob.get('aws_secret_access_key'), 'SECRET2222000022220000222200002222000022'
     assert_equal bob.get('aws_session_token'), 'SESSIONTOKEN222200002222000022220000222200002222000022220000etc'
 
@@ -55,7 +55,7 @@ describe AwsCliConfigParser do
         'role_arn'              => 'arn:aws:iam::222200002222:role/SomeRole',
         'role_session_name'     => 'session_name',
         'duration_seconds'      => '43200',
-        'aws_access_key_id'     => 'AKID2222000022220000',
+        'aws_access_key_id'     => 'ASIA2222000022220000',
         'aws_secret_access_key' => 'SECRET2222000022220000222200002222000022',
         'aws_session_token'     => 'SESSIONTOKEN222200002222000022220000222200002222000022220000etc',
       },

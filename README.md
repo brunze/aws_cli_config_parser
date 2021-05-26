@@ -47,7 +47,7 @@ region = eu-central-1
 **~/.aws/credentials**
 ```
 [default]
-aws_access_key_id = AKID1111000011110000
+aws_access_key_id = ASIA1111000011110000
 aws_secret_access_key = SECRET1111000011110000111100001111000011
 ```
 
@@ -55,7 +55,7 @@ aws_secret_access_key = SECRET1111000011110000111100001111000011
 ```
 {
   "Credentials": {
-    "AccessKeyId": "AKID2222000022220000",
+    "AccessKeyId": "ASIA2222000022220000",
     "SecretAccessKey": "SECRET2222000022220000222200002222000022",
     "SessionToken": "SESSIONTOKEN222200002222000022220000222200002222000022220000etc",
     "Expiration": "<some timestamp in the future>"
@@ -80,7 +80,7 @@ default = profiles.get('default')
 default.get('region')
 # => "eu-west-1"
 default.get('aws_access_key_id')
-# => "AKID1111000011110000"
+# => "ASIA1111000011110000"
 default.get('aws_secret_access_key')
 # => "SECRET1111000011110000111100001111000011"
 
@@ -92,7 +92,7 @@ admin.get('region')
 admin.get('role_arn')
 # => "arn:aws:iam::222200002222:role/SomeRole"
 admin.get('aws_access_key_id')
-# => "AKID2222000022220000"
+# => "ASIA2222000022220000"
 admin.get('aws_secret_access_key')
 # => "SECRET2222000022220000222200002222000022"
 admin.get('aws_session_token')
@@ -105,7 +105,7 @@ Or if you prefer using hashes:
 AwsCliConfigParser.parse.to_h == {
   'default' => {
     'region'                => 'eu-west-1',
-    'aws_access_key_id'     => 'AKID1111000011110000',
+    'aws_access_key_id'     => 'ASIA1111000011110000',
     'aws_secret_access_key' => 'SECRET1111000011110000111100001111000011'
   },
   'admin' => {
@@ -113,7 +113,7 @@ AwsCliConfigParser.parse.to_h == {
     'role_arn'              => 'arn:aws:iam::222200002222:role/SomeRole',
     'source_profile'        => 'default',
     'role_session_name'     => 'session_name',
-    'aws_access_key_id'     => 'AKID2222000022220000',
+    'aws_access_key_id'     => 'ASIA2222000022220000',
     'aws_secret_access_key' => 'SECRET2222000022220000222200002222000022',
     'aws_session_token'     => 'SESSIONTOKEN222200002222000022220000222200002222000022220000etc',
   }
@@ -134,9 +134,9 @@ This gem includes a limited CLI frontend. You can obtain a configuration value l
 
 ```sh
 aws_cli_config_parser --profile admin --key aws_access_key_id
-# AKID2222000022220000
+# ASIA2222000022220000
 aws_cli_config_parser -p admin -k aws_access_key_id
-# AKID2222000022220000
+# ASIA2222000022220000
 ```
 
 You can optionally define a fallback value to be returned in case the specified profile does not exist or the configuration parameter is not defined:
@@ -152,9 +152,9 @@ You can also specify a custom directory where the command will look for your AWS
 
 ```sh
 aws_cli_config_parser --profile someone --key aws_access_key_id --directory /somewhere/else/.my-aws-folder
-# AKID................
+# ASIA................
 aws_cli_config_parser -p someone -k aws_access_key_id -d /somewhere/else/.my-aws-folder
-# AKID................
+# ASIA................
 ```
 
 
