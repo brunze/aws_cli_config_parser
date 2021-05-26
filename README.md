@@ -1,6 +1,6 @@
 # AWS CLI Configuration Parser
 
-This Ruby gem provides a tool to parse profile settings and secrets from AWS CLI configuration files, including the cached credentials from STS AssumeRole calls. This is often useful when using the AWS CLI with roles that require an MFA code. After authenticating successfully with an MFA code temporary session credentials are cached in your `~/.aws` folder. You'll often need to pass these temporary credentials to other tools such as Docker containers. This gem parses the files in your `~/.aws` folder and merges all information allowing you to retrieve any credential or setting.
+This Ruby gem provides a tool to parse profile settings and secrets from AWS CLI configuration files, including temporary credentials cached by the CLI when using IAM roles. This is often useful when using CLI profiles that assume roles requiring an MFA code. After authenticating successfully with an MFA code, temporary session credentials are cached in your `~/.aws` folder. You'll often need to pass these temporary credentials to other tools such as Docker containers. This gem parses the files in your `~/.aws` folder and merges all information allowing you to retrieve any credential or setting.
 
 ## Installation
 
@@ -126,6 +126,35 @@ If you have your AWS CLI configuration directory somewhere other than the defaul
 ```ruby
 AwsCliConfigParser.parse(aws_directory: '/somewhere/else/.my-aws-folder')
 # => ...
+```
+
+### CLI frontend
+
+This gem includes a limited CLI frontend. You can obtain a configuration value like this:
+
+```sh
+aws_cli_config_parser --profile admin --key aws_access_key_id
+# AKID2222000022220000
+aws_cli_config_parser -p admin -k aws_access_key_id
+# AKID2222000022220000
+```
+
+You can optionally define a fallback value to be returned in case the specified profile does not exist or the configuration parameter is not defined:
+
+```sh
+aws_cli_config_parser --profile bogus --key aws_access_key_id --fallback OOOPS
+# OOOPS
+aws_cli_config_parser -p bogus -k aws_access_key_id -f OOOPS
+# OOOPS
+```
+
+You can also specify a custom directory where the command will look for your AWS CLI configuration files:
+
+```sh
+aws_cli_config_parser --profile someone --key aws_access_key_id --directory /somewhere/else/.my-aws-folder
+# AKID................
+aws_cli_config_parser -p someone -k aws_access_key_id -d /somewhere/else/.my-aws-folder
+# AKID................
 ```
 
 

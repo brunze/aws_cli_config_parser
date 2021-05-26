@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require 'aws_cli_config_parser/cli'
+
+begin
+  AwsCliConfigParser::CLI.new.dispatch(ARGV)
+rescue => error
+  $stderr.puts(error.message)
+  exit 1
+end

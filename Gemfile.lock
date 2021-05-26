@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    aws_cli_config_parser (0.1.0)
+    aws_cli_config_parser (0.2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -10,7 +10,7 @@ GEM
     rake (13.0.3)
 
 PLATFORMS
-  x86_64-linux-musl
+  x86_64-linux
 
 DEPENDENCIES
   aws_cli_config_parser!
@@ -18,4 +18,4 @@ DEPENDENCIES
   rake (~> 13.0)
 
 BUNDLED WITH
-   2.2.16
+   2.2.17
